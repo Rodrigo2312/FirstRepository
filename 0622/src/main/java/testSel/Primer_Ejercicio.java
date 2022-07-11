@@ -62,21 +62,6 @@ public class Primer_Ejercicio {
 			System.out.println("ERROR: Nathan no fue encontrado");
 		}
 		
-		/*
-		
-		
-		//Obtener el texto
-		
-		String welcomeName = driver.findElement(By.id("welcome")).getText();
-		boolean name = welcomeName.contains("kota");
-		
-		if(name) {
-			System.out.println("El mensaje contiene el nombre de kathija");
-		}else {
-			System.out.println("ERROR: el Mensaje no tiene el nombre kathija");
-		}
-		
-		*/
 	}
 
 }
