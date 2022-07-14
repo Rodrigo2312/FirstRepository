@@ -36,10 +36,6 @@ public class Primer_Ejercicio {
 		directoryName.sendKeys("Nathan");
 		Thread.sleep(2000);
 		
-		//Click en Search
-		WebElement btnSearch = driver.findElement(By.id("searchBtn"));
-		btnSearch.click();
-		
 		//Seleccionar Job Title
 		Select drpJobTitle = new Select(driver.findElement(By.id("searchDirectory_job_title")));
 		drpJobTitle.selectByVisibleText("Sales Representative");
@@ -49,15 +45,15 @@ public class Primer_Ejercicio {
 		drpLocation.selectByVisibleText("United States");
 		
 		//Click en Search
-		WebElement btnSearch1 = driver.findElement(By.id("searchBtn"));
-		btnSearch1.click();
+		WebElement btnSearch = driver.findElement(By.id("searchBtn"));
+		btnSearch.click();
 		
 		//Verificacion de Name completo
 		String nameVerification = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[2]/td[2]/ul/li[1]/b")).getText();
 		boolean name = nameVerification.contains("Nathan Elliot");
 		
 		if(name) {
-			System.out.println("Se encontro a Nathan correctamente");
+		    System.out.println("Se encontro a Nathan");
 		}else {
 			System.out.println("ERROR: Nathan no fue encontrado");
 		}
@@ -65,4 +61,3 @@ public class Primer_Ejercicio {
 	}
 
 }
-
