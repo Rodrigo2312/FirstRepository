@@ -11,8 +11,7 @@ public class DashboardPage {
 
 	public DashboardPage(WebDriver driver) {
 		PageFactory.initElements(driver, this); // Inicializamos los PageObjects con PageFactory
-		// THIS es un keyword de Java con el que indicamos que es esta misma clase donde
-		// se va a utilizar
+		// THIS es un keyword de Java con el que indicamos que es esta misma clase donde se va a utilizar
 
 	}
 

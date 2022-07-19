@@ -12,4 +12,11 @@ public class WrapClass {
 		webElementToSendText.sendKeys(textToSend);
 	}
 
+	public static void selectByVisibleText(String string, WebElement drpJobTitle) {
+		// TODO Auto-generated method stub
+		
+	
+		
+	}
+
 }
