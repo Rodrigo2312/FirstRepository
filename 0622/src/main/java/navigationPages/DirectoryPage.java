@@ -50,7 +50,7 @@ public class DirectoryPage {
 		Thread.sleep(2000);
 	}
 	
-	public boolean verifySerachNameResult(String expectedName) {
+	public boolean verifySearchNameResult(String expectedName) {
 		boolean isdisplayed = resultTable.getText().contains(expectedName);
 		return isdisplayed;
 	}

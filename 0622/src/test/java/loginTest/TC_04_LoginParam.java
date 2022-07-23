@@ -3,14 +3,16 @@ package loginTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+
 
 import commonClasses.DriverSetup;
 import commonClasses.GlobalVariables;
-import commonClasses.WrapClass;
 import navigationPages.LoginPage;
 
-public class TC_01_Login {
+public class TC_04_LoginParam {
 	//Declaramos e inicializamos un objeto del tipo WebDriver para utilizarlo en este test case
 	WebDriver driver = DriverSetup.setupDriver();
 	
@@ -24,13 +26,13 @@ public class TC_01_Login {
 	}
 	
   @Test
-  public void TC_01() {
-	  login.login(GlobalVariables.USER_ADMIN, GlobalVariables.PWD_ADMIN);
+  @Parameters({"user","password"})
+  public void TC_04(String user, String password) {
+	  login.login(user, password);
   }
   
   @AfterTest
   public void closeDriver() {
-	  WrapClass.takeScreenshot(driver, "TC_01");
 	  driver.quit();
   }
 }

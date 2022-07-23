@@ -3,14 +3,17 @@ package loginTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+
 
 import commonClasses.DriverSetup;
 import commonClasses.GlobalVariables;
 import commonClasses.WrapClass;
 import navigationPages.LoginPage;
 
-public class TC_01_Login {
+public class TC_06_LoginExcel {
 	//Declaramos e inicializamos un objeto del tipo WebDriver para utilizarlo en este test case
 	WebDriver driver = DriverSetup.setupDriver();
 	
@@ -24,13 +27,16 @@ public class TC_01_Login {
 	}
 	
   @Test
-  public void TC_01() {
-	  login.login(GlobalVariables.USER_ADMIN, GlobalVariables.PWD_ADMIN);
+  public void TC_05() {
+	  String user = WrapClass.getCellData("TC_05",1,0);
+	  String pwd = WrapClass.getCellData("TC_05",1,1);
+	  
+	  login.login(user, pwd);
   }
   
   @AfterTest
   public void closeDriver() {
-	  WrapClass.takeScreenshot(driver, "TC_01");
+	  WrapClass.takeScreenshot(driver, "TC_05");
 	  driver.quit();
   }
 }
